@@ -1,0 +1,30 @@
+my_project/
+│
+├── models/
+│   └── best_model.pkl   # Serialized machine learning model file
+│
+├── app/
+│   ├── __init__.py      # Initializes the Flask app and includes any app-wide configurations
+│   ├── views.py         # Contains the routes and views for the app
+│   ├── models.py        # Contains the machine learning model classes and related functions
+│   └── templates/       # HTML templates for the front-end
+│       └── index.html   # Main page template
+│
+├── tests/
+│   ├── __init__.py      # Makes tests a package
+│   └── test_views.py    # Contains unit tests for the views
+│
+├── scripts/
+│   └── start_server.sh  # Script to start the Flask server
+│
+├── data/
+│   └── dataset.csv      # Placeholder for data files used in the project
+│
+├── notebooks/
+│   └── model_development.ipynb  # Jupyter notebook for model experimentation
+│
+├── .env                 # Environment variables
+├── .gitignore           # Specifies intentionally untracked files to ignore
+├── Dockerfile           # Contains all the commands to assemble the app image
+├── requirements.txt     # Contains all dependencies
+└── setup.sh             # Shell script for setting up the virtual environment
