@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>Heart Disease Prediction Form</title>
+		<!-- Bootstrap CSS -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+	</head>
+	<body>
+		<div class="container mt-5">
+			<h1 class="mb-3">Heart Disease Risk Prediction</h1>
+			<form action="/predict" method="post" class="row g-3">
+				<div class="col-md-6">
+					<label for="age" class="form-label">Age:</label>
+					<input
+						type="number"
+						class="form-control"
+						id="age"
+						name="age"
+						required
+						min="0"
+						max="150"
+					/>
+				</div>
+				<div class="col-md-6">
+					<label class="form-label">Chest Pain:</label>
+					<div>
+						<input
+							type="radio"
+							id="chest_pain_yes"
+							name="chest_pain"
+							value="1"
+							required
+						/>
+						<label for="chest_pain_yes">Yes</label>
+						<input
+							type="radio"
+							id="chest_pain_no"
+							name="chest_pain"
+							value="0"
+						/>
+						<label for="chest_pain_no">No</label>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<label class="form-label">High Blood Pressure:</label>
+					<div>
+						<input
+							type="radio"
+							id="blood_pressure_yes"
+							name="blood_pressure"
+							value="1"
+							required
+						/>
+						<label for="blood_pressure_yes">Yes</label>
+						<input
+							type="radio"
+							id="blood_pressure_no"
+							name="blood_pressure"
+							value="0"
+						/>
+						<label for="blood_pressure_no">No</label>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<label class="form-label">High Cholesterol:</label>
+					<div>
+						<input
+							type="radio"
+							id="cholesterol_high_yes"
+							name="cholesterol_high"
+							value="1"
+							required
+						/>
+						<label for="cholesterol_high_yes">Yes</label>
+						<input
+							type="radio"
+							id="cholesterol_high_no"
+							name="cholesterol_high"
+							value="0"
+						/>
+						<label for="cholesterol_high_no">No</label>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<label class="form-label">Diabetes:</label>
+					<div>
+						<input
+							type="radio"
+							id="diabetes_yes"
+							name="diabetes"
+							value="1"
+							required
+						/>
+						<label for="diabetes_yes">Yes</label>
+						<input
+							type="radio"
+							id="diabetes_no"
+							name="diabetes"
+							value="0"
+						/>
+						<label for="diabetes_no">No</label>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<label class="form-label">Smoker:</label>
+					<div>
+						<input
+							type="radio"
+							id="smoker_yes"
+							name="smoker"
+							value="1"
+							required
+						/>
+						<label for="smoker_yes">Yes</label>
+						<input
+							type="radio"
+							id="smoker_no"
+							name="smoker"
+							value="0"
+						/>
+						<label for="smoker_no">No</label>
+					</div>
+				</div>
+				<div class="col-12">
+					<button type="submit" class="btn btn-primary">
+						Predict
+					</button>
+				</div>
+			</form>
+		</div>
+		<!-- Bootstrap Bundle with Popper -->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+	</body>
+</html>
