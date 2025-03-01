@@ -55,20 +55,22 @@ def predict() -> Union[str, tuple]:
         "ST_Slope",
     ]
 
-    # Extract data from form and convert parameters to appropriate types
-    features: list[int] = []
+    # Extract data from form and convert parameters to int or float or string
+    features: list[int | float | str] = []
     for key in feature_keys:
-        try:
-            value: int = int(
-                request.form.get(key, "0")
-            )  # Defaulting to "0" if key is not found
-            features.append(value)
-        except ValueError:
-            # If any conversion fails, return an error immediately
+        value = request.form.get(key)
+        if value is None:
             return (
-                jsonify({"error": f"Invalid input for {key}. Expected a number."}),
+                jsonify({"error": f"Missing value for {key} parameter"}),
                 400,
             )
+        try:
+            features.append(int(value))
+        except ValueError:
+            try:
+                features.append(float(value))
+            except ValueError:
+                features.append(str(value))
 
     # Call the model prediction function, assuming it accepts a list of ints
     result: int = predict_risk(
@@ -76,4 +78,6 @@ def predict() -> Union[str, tuple]:
     )  # Ensure this function is imported and defined properly
 
     # Render the output page with the prediction result
-    return render_template("output.html", prediction_result=result)
+    return render_template(
+        "output.html", prediction_result=True if result == 1 else False
+    )
