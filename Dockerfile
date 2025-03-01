@@ -1,5 +1,5 @@
 # Use an official Python runtime as a parent image
-FROM python:3.11
+FROM python:3.12
 
 # Set the working directory in the container
 WORKDIR /app
@@ -17,4 +17,4 @@ EXPOSE 5000
 ENV NAME World
 
 # Replace the app.py with the correct file name
-CMD ["python", "app.py"]
+CMD ["python", "main.py"]

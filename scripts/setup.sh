@@ -12,9 +12,10 @@ source venv/bin/activate
 pip install --upgrade pip
 
 # Install required Python packages from requirements.txt
+cd ..
 pip install -r requirements.txt
 
 echo "Environment setup complete. You can now run the Flask app locally."
 
-# Optional: commands to start the Flask app or other services can be added here
-# flask run --host=0.0.0.0 --port=5000
+# Start the Flask app
+python app.py
