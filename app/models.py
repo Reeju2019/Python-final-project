@@ -1,10 +1,11 @@
-from joblib import load
+import pickle
 
 # Load the pre-trained model (ensure the path is correct)
 model_path: str = (
-    "../models/best_model.joblib"  # Ensure the model is saved with .joblib extension
+    "../models/model_and_data.pkl"  # Ensure the model is saved with .joblib extension
 )
-model = load(model_path)  # Load the model using joblib
+with open(model_path, "rb") as file:
+    loaded_model, loaded_data = pickle.load(file)  # Load the model using joblib
 
 
 def predict_risk(features: list[int]) -> int:
@@ -16,9 +17,9 @@ def predict_risk(features: list[int]) -> int:
 
     """
     # Prepare data for the model if needed
-
+    print(loaded_data.head())
     # Make prediction
-    prediction: list[int] = model.predict([features])
+    prediction: list[int] = loaded_model.predict([features])
 
     # Return the prediction result
     return prediction[0]

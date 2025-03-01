@@ -10,12 +10,12 @@
 			rel="stylesheet"
 		/>
 		<style>
-			/* Set base font size for the entire website */
 			body {
-				font-size: 24px; /* Increase base font size from default (usually 16px) */
+				font-size: 16px;
 			}
-			.form-label {
-				font-weight: bold; /* Make labels bold for better readability */
+			.form-label,
+			.form-check-label {
+				font-weight: bold;
 			}
 		</style>
 	</head>
@@ -23,497 +23,108 @@
 		<div class="container mt-5">
 			<h1 class="mb-3">Heart Disease Risk Prediction</h1>
 			<form action="/predict" method="post" class="row g-3">
-				<div class="col-md-12">
-					<label class="form-label" for="age" class="form-label"
-						>Age:</label
-					>
+				<div class="col-md-4">
+					<label for="age" class="form-label">Age:</label>
 					<input
 						type="number"
 						class="form-control"
 						id="age"
 						name="age"
 						required
-						min="0"
-						max="150"
 					/>
 				</div>
-				<div
-					class="col-md-6 d-flex justify-content-between align-items-center"
-				>
-					<label class="form-label">Chest Pain: </label>
-					<div class="ms-4">
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="chest_pain_yes"
-								name="chest_pain"
-								value="1"
-								required
-							/>
-							<label class="form-check-label" for="chest_pain_yes"
-								>Yes</label
-							>
-						</div>
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="chest_pain_no"
-								name="chest_pain"
-								value="0"
-							/>
-							<label class="form-check-label" for="chest_pain_no"
-								>No</label
-							>
-						</div>
-					</div>
+				<div class="col-md-4">
+					<label class="form-label">Sex:</label>
+					<select class="form-control" id="sex" name="sex" required>
+						<option value="M">Male</option>
+						<option value="F">Female</option>
+					</select>
 				</div>
-				<div
-					class="col-md-6 d-flex justify-content-between align-items-center"
-				>
-					<label class="form-label">Shortness of Breath:</label>
-					<div class="ms-4">
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="shortness_of_breath_yes"
-								name="shortness_of_breath"
-								value="1"
-								required
-							/>
-							<label
-								class="form-check-label"
-								for="shortness_of_breath_yes"
-								>Yes</label
-							>
-						</div>
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="shortness_of_breath_no"
-								name="shortness_of_breath"
-								value="0"
-							/>
-							<label
-								class="form-check-label"
-								for="shortness_of_breath_no"
-								>No</label
-							>
-						</div>
-					</div>
-				</div>
-				<div
-					class="col-md-6 d-flex justify-content-between align-items-center"
-				>
-					<label class="form-label">Unexplained Fatigue:</label>
-					<div class="ms-4">
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="fatigue_yes"
-								name="fatigue"
-								value="1"
-								required
-							/>
-							<label class="form-check-label" for="fatigue_yes"
-								>Yes</label
-							>
-						</div>
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="fatigue_no"
-								name="fatigue"
-								value="0"
-							/>
-							<label class="form-check-label" for="fatigue_no"
-								>No</label
-							>
-						</div>
-					</div>
-				</div>
-				<div
-					class="col-md-6 d-flex justify-content-between align-items-center"
-				>
-					<label class="form-label">Palpitations :</label>
-					<div class="ms-4">
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="palpitations_yes"
-								name="palpitations"
-								value="1"
-								required
-							/>
-							<label
-								class="form-check-label"
-								for="palpitations_yes"
-								>Yes</label
-							>
-						</div>
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="palpitations_no"
-								name="palpitations"
-								value="0"
-							/>
-							<label
-								class="form-check-label"
-								for="palpitations_no"
-								>No</label
-							>
-						</div>
-					</div>
-				</div>
-				<div
-					class="col-md-6 d-flex justify-content-between align-items-center"
-				>
-					<label class="form-label">Dizziness/Fainting :</label>
-					<div class="ms-4">
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="dizziness_yes"
-								name="dizziness"
-								value="1"
-								required
-							/>
-							<label class="form-check-label" for="dizziness_yes"
-								>Yes</label
-							>
-						</div>
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="dizziness_no"
-								name="dizziness"
-								value="0"
-							/>
-							<label class="form-check-label" for="dizziness_no"
-								>No</label
-							>
-						</div>
-					</div>
-				</div>
-				<div
-					class="col-md-6 d-flex justify-content-between align-items-center"
-				>
-					<label class="form-label">Swelling in Legs/Ankles :</label>
-					<div class="ms-4">
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="swelling_yes"
-								name="swelling"
-								value="1"
-								required
-							/>
-							<label class="form-check-label" for="swelling_yes"
-								>Yes</label
-							>
-						</div>
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="swelling_no"
-								name="swelling"
-								value="0"
-							/>
-							<label class="form-check-label" for="swelling_no"
-								>No</label
-							>
-						</div>
-					</div>
-				</div>
-				<div
-					class="col-md-6 d-flex justify-content-between align-items-center"
-				>
-					<label class="form-label"
-						>Pain in Arm/Jaw/Neck/Back :</label
+				<div class="col-md-4">
+					<label class="form-label">Chest Pain Type:</label>
+					<select
+						class="form-control"
+						id="chestPainType"
+						name="chestPainType"
+						required
 					>
-					<div class="ms-4">
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="radiating_pain_yes"
-								name="radiating_pain"
-								value="1"
-								required
-							/>
-							<label
-								class="form-check-label"
-								for="radiating_pain_yes"
-								>Yes</label
-							>
-						</div>
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="radiating_pain_no"
-								name="radiating_pain"
-								value="0"
-							/>
-							<label
-								class="form-check-label"
-								for="radiating_pain_no"
-								>No</label
-							>
-						</div>
-					</div>
+						<option value="ATA">ATA</option>
+						<option value="NAP">NAP</option>
+						<option value="ASY">Asymptomatic</option>
+						<option value="TA">TA</option>
+					</select>
 				</div>
-				<div
-					class="col-md-6 d-flex justify-content-between align-items-center"
-				>
-					<label class="form-label">Cold Sweats and Nausea :</label>
-					<div class="ms-4">
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="cold_sweats_yes"
-								name="cold_sweats"
-								value="1"
-								required
-							/>
-							<label
-								class="form-check-label"
-								for="cold_sweats_yes"
-								>Yes</label
-							>
-						</div>
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="cold_sweats_no"
-								name="cold_sweats"
-								value="0"
-							/>
-							<label class="form-check-label" for="cold_sweats_no"
-								>No</label
-							>
-						</div>
-					</div>
-				</div>
-				<div
-					class="col-md-6 d-flex justify-content-between align-items-center"
-				>
-					<label class="form-label">High Blood Pressure:</label>
-					<div class="ms-4">
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="blood_pressure_yes"
-								name="blood_pressure"
-								value="1"
-								required
-							/>
-							<label
-								class="form-check-label"
-								for="blood_pressure_yes"
-								>Yes</label
-							>
-						</div>
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="blood_pressure_no"
-								name="blood_pressure"
-								value="0"
-							/>
-							<label
-								class="form-check-label"
-								for="blood_pressure_no"
-								>No</label
-							>
-						</div>
-					</div>
-				</div>
-				<div
-					class="col-md-6 d-flex justify-content-between align-items-center"
-				>
-					<label class="form-label">High Cholesterol:</label>
-					<div class="ms-4">
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="cholesterol_high_yes"
-								name="cholesterol_high"
-								value="1"
-								required
-							/>
-							<label
-								class="form-check-label"
-								for="cholesterol_high_yes"
-								>Yes</label
-							>
-						</div>
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="cholesterol_high_no"
-								name="cholesterol_high"
-								value="0"
-							/>
-							<label
-								class="form-check-label"
-								for="cholesterol_high_no"
-								>No</label
-							>
-						</div>
-					</div>
-				</div>
-				<div
-					class="col-md-6 d-flex justify-content-between align-items-center"
-				>
-					<label class="form-label">Diabetes:</label>
-					<div class="ms-4">
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="diabetes_yes"
-								name="diabetes"
-								value="1"
-								required
-							/>
-							<label class="form-check-label" for="diabetes_yes"
-								>Yes</label
-							>
-						</div>
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="diabetes_no"
-								name="diabetes"
-								value="0"
-							/>
-							<label class="form-check-label" for="diabetes_no"
-								>No</label
-							>
-						</div>
-					</div>
-				</div>
-				<div
-					class="col-md-6 d-flex justify-content-between align-items-center"
-				>
-					<label class="form-label">Smoker:</label>
-					<div class="ms-4">
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="smoker_yes"
-								name="smoker"
-								value="1"
-								required
-							/>
-							<label class="form-check-label" for="smoker_yes"
-								>Yes</label
-							>
-						</div>
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="smoker_no"
-								name="smoker"
-								value="0"
-							/>
-							<label class="form-check-label" for="smoker_no"
-								>No</label
-							>
-						</div>
-					</div>
-				</div>
-				<div
-					class="col-md-6 d-flex justify-content-between align-items-center"
-				>
-					<label class="form-label">Obesity :</label>
-					<div class="ms-4">
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="obesity_yes"
-								name="obesity"
-								value="1"
-								required
-							/>
-							<label class="form-check-label" for="obesity_yes"
-								>Yes</label
-							>
-						</div>
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="obesity_no"
-								name="obesity"
-								value="0"
-							/>
-							<label class="form-check-label" for="obesity_no"
-								>No</label
-							>
-						</div>
-					</div>
-				</div>
-				<div
-					class="col-md-6 d-flex justify-content-between align-items-center"
-				>
-					<label class="form-label"
-						>Family History of Heart Disease :</label
+				<div class="col-md-4">
+					<label for="restingBP" class="form-label"
+						>Resting BP:</label
 					>
-					<div class="ms-4">
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="family_history_yes"
-								name="family_history"
-								value="1"
-								required
-							/>
-							<label
-								class="form-check-label"
-								for="family_history_yes"
-								>Yes</label
-							>
-						</div>
-						<div class="form-check form-check-inline">
-							<input
-								class="form-check-input"
-								type="radio"
-								id="family_history_no"
-								name="family_history"
-								value="0"
-							/>
-							<label
-								class="form-check-label"
-								for="family_history_no"
-								>No</label
-							>
-						</div>
-					</div>
+					<input
+						type="number"
+						class="form-control"
+						id="restingBP"
+						name="restingBP"
+						required
+					/>
+				</div>
+				<div class="col-md-4">
+					<label for="cholesterol" class="form-label"
+						>Cholesterol:</label
+					>
+					<input
+						type="number"
+						class="form-control"
+						id="cholesterol"
+						name="cholesterol"
+						required
+					/>
+				</div>
+				<div class="col-md-4">
+					<label for="fastingBS" class="form-label"
+						>Fasting Blood Sugar:</label
+					>
+					<input
+						type="number"
+						class="form-control"
+						id="fastingBS"
+						name="fastingBS"
+						required
+					/>
+				</div>
+				<div class="col-md-4">
+					<label class="form-label">Exercise Angina:</label>
+					<select
+						class="form-control"
+						id="exerciseAngina"
+						name="exerciseAngina"
+						required
+					>
+						<option value="Y">Yes</option>
+						<option value="N">No</option>
+					</select>
+				</div>
+				<div class="col-md-4">
+					<label for="oldpeak" class="form-label">Oldpeak:</label>
+					<input
+						type="number"
+						step="0.1"
+						class="form-control"
+						id="oldpeak"
+						name="oldpeak"
+						required
+					/>
+				</div>
+				<div class="col-md-4">
+					<label class="form-label">ST Slope:</label>
+					<select
+						class="form-control"
+						id="stSlope"
+						name="stSlope"
+						required
+					>
+						<option value="Up">Up</option>
+						<option value="Flat">Flat</option>
+						<option value="Down">Down</option>
+					</select>
 				</div>
 				<div class="col-12">
 					<button type="submit" class="btn btn-primary">

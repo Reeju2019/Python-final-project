@@ -26,22 +26,33 @@ def predict() -> Union[str, tuple]:
         Union[str, tuple]: The rendered HTML content or a JSON response with status code
     """
     # Define feature keys to extract data more dynamically and ensure consistency
+    # feature_keys: list[str] = [
+    #     "age",
+    #     "chest_pain",
+    #     "shortness_of_breath",
+    #     "fatigue",
+    #     "palpitations",
+    #     "dizziness",
+    #     "swelling",
+    #     "radiating_pain",
+    #     "cold_sweats",
+    #     "blood_pressure",
+    #     "cholesterol_high",
+    #     "diabetes",
+    #     "smoker",
+    #     "obesity",
+    #     "family_history",
+    # ]
     feature_keys: list[str] = [
-        "age",
-        "chest_pain",
-        "shortness_of_breath",
-        "fatigue",
-        "palpitations",
-        "dizziness",
-        "swelling",
-        "radiating_pain",
-        "cold_sweats",
-        "blood_pressure",
-        "cholesterol_high",
-        "diabetes",
-        "smoker",
-        "obesity",
-        "family_history",
+        "Age",
+        "Sex",
+        "ChestPainType",
+        "Cholesterol",
+        "FastingBS",
+        "MaxHR",
+        "ExerciseAngina",
+        "Oldpeak",
+        "ST_Slope",
     ]
 
     # Extract data from form and convert parameters to appropriate types
