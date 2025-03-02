@@ -2,8 +2,10 @@
 import pickle
 import os
 
+
 print("Current Directory:", os.getcwd())
 # Load the pre-trained model (ensure the path is correct)
+
 
 model_path: str = "./models/model_and_data.pkl"
 with open(model_path, "rb") as file:
