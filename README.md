@@ -68,6 +68,16 @@ Contributions to the project are welcome! Please consider the following steps:
 4. Push to the branch (`git push origin feature-branch`).
 5. Create a new Pull Request.
 
+## Code Documentation
+
+For code documentation we have used Sphinx. To run the document
+
+1. Go to the doc folder.
+2. Then Build folder
+3. Then run the index.html file in your local browser
+4. After updating the code please update the sphinx doc as well.
+5. to update the doc run the command 'sphinx-build -b html docs/source docs/build'in the doc folder.
+
 ## Acknowledgements
 
 -   Dataset provided by [Kaggle - Heart Failure Prediction](https://www.kaggle.com/code/tanmay111999/heart-failure-prediction-cv-score-90-5-models/input).
