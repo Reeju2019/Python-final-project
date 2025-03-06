@@ -18,7 +18,7 @@ def home() -> str:
 
 
 @views.route("/predict", methods=["GET"])
-def predict() -> str:
+def predict() -> Union[str, tuple]:
     """Render input form.
     Args:
         None
@@ -98,6 +98,8 @@ def output() -> Union[str, tuple]:
     result: int = predict_risk(
         features
     )  # Ensure this function is imported and defined properly
+    if request.is_json:
+        return jsonify({"prediction": result})
 
     # Render the output page with the prediction result
     return render_template(

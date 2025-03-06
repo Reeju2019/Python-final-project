@@ -4,7 +4,7 @@ from flask import Flask
 from .views import views
 
 
-def create_app() -> object:
+def create_app(testing=False) -> object:
     """Create and configure an instance of the Flask application.
     Args:
         None
@@ -12,7 +12,9 @@ def create_app() -> object:
         object: The Flask app instance
     """
     app: object = Flask(__name__)
-
+    
+    if testing:
+        app.config["TESTING"] = True
     # You might want to configure a secret key for sessions, database URLs, etc.
     # app.config["SECRET_KEY"] = "your_secret_key"
 
