@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="./">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>API Reference Documentation &#8212; Heart Disease Prediction 1.0 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=5ecbeea2" />
+    <link rel="stylesheet" type="text/css" href="_static/basic.css?v=b08954a9" />
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css?v=27fed22d" />
+    <script src="_static/documentation_options.js?v=f2a433a1"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Testing" href="testing.html" />
+    <link rel="prev" title="Usage" href="usage.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+
+  
+  
+
+  </head><body>
+  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          
+
+          <div class="body" role="main">
+            
+  <section id="api-reference-documentation">
+<h1>API Reference Documentation<a class="headerlink" href="#api-reference-documentation" title="Link to this heading">¶</a></h1>
+<p>This document provides an overview of the available API endpoints in the application.</p>
+<section id="home-route">
+<h2>Home Route<a class="headerlink" href="#home-route" title="Link to this heading">¶</a></h2>
+<p><strong>Endpoint:</strong> <cite>/</cite>
+<strong>Method:</strong> <cite>GET</cite>
+<strong>Description:</strong>
+This route serves the homepage of the application. It renders the <cite>home.html</cite> template.</p>
+<p><strong>Example Response:</strong></p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Home<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Welcome to the Risk Prediction App<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="prediction-input-route">
+<h2>Prediction Input Route<a class="headerlink" href="#prediction-input-route" title="Link to this heading">¶</a></h2>
+<p><strong>Endpoint:</strong> <cite>/predict</cite>
+<strong>Method:</strong> <cite>GET</cite>
+<strong>Description:</strong>
+This route serves the prediction input form where users can enter their health parameters for risk prediction.
+It renders the <cite>index.html</cite> template.</p>
+<p><strong>Example Response:</strong></p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Prediction<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Enter your details for risk prediction<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="about-route">
+<h2>About Route<a class="headerlink" href="#about-route" title="Link to this heading">¶</a></h2>
+<p><strong>Endpoint:</strong> <cite>/about</cite>
+<strong>Method:</strong> <cite>GET</cite>
+<strong>Description:</strong>
+This route serves the About page of the application. It renders the <cite>about.html</cite> template, which provides information about the purpose of the application.</p>
+<p><strong>Example Response:</strong></p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>About<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>About the Risk Prediction App<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+<section id="prediction-output-route">
+<h2>Prediction Output Route<a class="headerlink" href="#prediction-output-route" title="Link to this heading">¶</a></h2>
+<p><strong>Endpoint:</strong> <cite>/output</cite>
+<strong>Method:</strong> <cite>POST</cite>
+<strong>Description:</strong>
+This route processes user input, passes it to the prediction model, and returns the risk assessment result.
+The response is either an HTML page (<cite>output.html</cite>) or a JSON object if requested via an API.</p>
+<section id="request-parameters">
+<h3>Request Parameters<a class="headerlink" href="#request-parameters" title="Link to this heading">¶</a></h3>
+<p>The request must contain the following form fields:</p>
+<ul class="simple">
+<li><p><strong>Age</strong> (int)</p></li>
+<li><p><strong>Sex</strong> (str: <cite>“M”</cite> or <cite>“F”</cite>)</p></li>
+<li><p><strong>ChestPainType</strong> (str)</p></li>
+<li><p><strong>Cholesterol</strong> (int)</p></li>
+<li><p><strong>FastingBS</strong> (int)</p></li>
+<li><p><strong>MaxHR</strong> (int)</p></li>
+<li><p><strong>ExerciseAngina</strong> (str: <cite>“0”</cite> or <cite>“1”</cite>)</p></li>
+<li><p><strong>Oldpeak</strong> (float)</p></li>
+<li><p><strong>ST_Slope</strong> (str)</p></li>
+</ul>
+<p>If any of these parameters are missing, the API will return a <cite>400 Bad Request</cite> error with a JSON response:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;error&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Missing value for &lt;parameter&gt; parameter&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="example-request-form-data-mode">
+<h3>Example Request (Form Data Mode)<a class="headerlink" href="#example-request-form-data-mode" title="Link to this heading">¶</a></h3>
+<div class="highlight-http notranslate"><div class="highlight"><pre><span></span><span class="nf">POST</span> <span class="nn">/output</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/x-www-form-urlencoded</span>
+
+<span class="nt">Age</span><span class="o">=</span><span class="s">55</span><span class="p">&amp;</span><span class="nt">Sex</span><span class="o">=</span><span class="s">M</span><span class="p">&amp;</span><span class="nt">ChestPainType</span><span class="o">=</span><span class="s">2</span><span class="p">&amp;</span><span class="nt">Cholesterol</span><span class="o">=</span><span class="s">200</span><span class="p">&amp;</span><span class="nt">FastingBS</span><span class="o">=</span><span class="s">0</span><span class="p">&amp;</span><span class="nt">MaxHR</span><span class="o">=</span><span class="s">160</span><span class="p">&amp;</span><span class="nt">ExerciseAngina</span><span class="o">=</span><span class="s">0</span><span class="p">&amp;</span><span class="nt">Oldpeak</span><span class="o">=</span><span class="s">1.2</span><span class="p">&amp;</span><span class="nt">ST_Slope</span><span class="o">=</span><span class="s">2</span>
+</pre></div>
+</div>
+</section>
+<section id="example-request-json-mode">
+<h3>Example Request (JSON Mode)<a class="headerlink" href="#example-request-json-mode" title="Link to this heading">¶</a></h3>
+<p>If the request is sent as JSON, it should be formatted as follows:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;Age&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">55</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Sex&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;M&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ChestPainType&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Cholesterol&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;FastingBS&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;MaxHR&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">160</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ExerciseAngina&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;0&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;Oldpeak&quot;</span><span class="p">:</span><span class="w"> </span><span class="mf">1.2</span><span class="p">,</span>
+<span class="w">    </span><span class="nt">&quot;ST_Slope&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2&quot;</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="example-response-json-mode">
+<h3>Example Response (JSON Mode)<a class="headerlink" href="#example-response-json-mode" title="Link to this heading">¶</a></h3>
+<p>If the request is sent as JSON, the response will also be in JSON format:</p>
+<div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
+<span class="w">    </span><span class="nt">&quot;prediction&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</section>
+<section id="example-response-html-mode">
+<h3>Example Response (HTML Mode)<a class="headerlink" href="#example-response-html-mode" title="Link to this heading">¶</a></h3>
+<p>If the request is sent via a form, the response will be an HTML page (<cite>output.html</cite>) displaying the prediction result:</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Prediction Result<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Prediction: Positive<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Link to this heading">¶</a></h2>
+<p>This API allows users to interact with the risk prediction model via a simple web interface and supports programmatic access via JSON responses.
+Ensure that all required fields are provided when submitting a request to the <cite>/output</cite> endpoint to avoid errors.</p>
+</section>
+</section>
+
+
+          </div>
+          
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+<h1 class="logo"><a href="index.html">Heart Disease Prediction</a></h1>
+
+
+
+
+
+
+
+
+
+<search id="searchbox" style="display: none" role="search">
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="Search"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</search>
+<script>document.getElementById('searchbox').style.display = "block"</script><h3>Navigation</h3>
+<p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Usage</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API Reference Documentation</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#home-route">Home Route</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prediction-input-route">Prediction Input Route</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#about-route">About Route</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#prediction-output-route">Prediction Output Route</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#conclusion">Conclusion</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="testing.html">Testing</a></li>
+</ul>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="index.html">Documentation overview</a><ul>
+      <li>Previous: <a href="usage.html" title="previous chapter">Usage</a></li>
+      <li>Next: <a href="testing.html" title="next chapter">Testing</a></li>
+  </ul></li>
+</ul>
+</div>
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="footer">
+      &#169;2025, Reeju, Gautam, Ravan.
+      
+      |
+      Powered by <a href="https://www.sphinx-doc.org/">Sphinx 8.2.3</a>
+      &amp; <a href="https://alabaster.readthedocs.io">Alabaster 1.0.0</a>
+      
+      |
+      <a href="_sources/api_reference.rst.txt"
+          rel="nofollow">Page source</a>
+    </div>
+
+    
+
+    
+  </body>
+</html>

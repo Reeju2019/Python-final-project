@@ -1,0 +1,23 @@
+API Reference
+=============
+
+The backend of the **Heart Disease Prediction** app is built using Flask. Below are the key API endpoints:
+
+1. **`/predict` (POST)**:
+   - **Description**: Accepts input data for heart disease prediction and returns the result.
+   - **Input**: Form data with features like age, cholesterol, etc.
+   - **Output**: A boolean indicating whether the user is at risk of heart disease.
+
+Example of a POST request:
+```json
+{
+   "Age": 50,
+   "Sex": "M",
+   "ChestPainType": "ATA",
+   "Cholesterol": 250,
+   "FastingBS": 0,
+   "MaxHR": 170,
+   "ExerciseAngina": "N",
+   "Oldpeak": 1.5,
+   "ST_Slope": "Up"
+}
