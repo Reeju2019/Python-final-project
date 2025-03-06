@@ -2,20 +2,41 @@ import pickle
 import numpy as np
 
 
-def load_preprocessors():
+def load_preprocessors() -> tuple:
+    """
+    Load pre-trained pre-processors from disk.
+    Returns:
+        tuple: Tuple containing pre-trained pre-process
+    """
     with open("./models/preprocessors.pkl", "rb") as f:
         le, mms, ss = pickle.load(f)
     return le, mms, ss
 
 
-def load_model():
+def load_model() -> object:
+    """
+    Load the pre-trained model from disk.
+    Returns:
+        sklearn.pipeline.Pipeline: Pre-trained model for prediction
+    """
     with open("./models/model_and_data.pkl", "rb") as model_file:
         model, data = pickle.load(model_file)
     return model
 
 
-def preprocess_input_data(input_data, le, mms, ss):
-    # Label encode categorical variables (same as done during training)
+def preprocess_input_data(
+    input_data: list, le: object, mms: object, ss: object
+) -> np.ndarray:
+    """
+    Preprocess input data for prediction.
+    Args:
+        input_data (list): List of input data.
+        le (LabelEncoder): LabelEncoder instance for categorical features.
+        mms (MinMaxScaler): MinMaxScaler instance for 'Oldpeak'.
+        ss (StandardScaler): StandardScaler instance for numerical features.
+    Returns:
+        np.ndarray: Processed input data for model prediction.
+    """
     try:
         input_data[1] = le.transform([input_data[1]])[0]  # Sex
     except ValueError:
@@ -73,7 +94,14 @@ def preprocess_input_data(input_data, le, mms, ss):
     return np.array(input_data).reshape(1, -1)  # Reshape for model input
 
 
-def predict_risk(input_data):
+def predict_risk(input_data: list) -> np.ndarray | str:
+    """
+    Make a prediction using the pre-trained model and pre-processors.
+    Args:
+        input_data (list): List of input features for prediction.
+    Returns:
+        np.ndarray: Model prediction
+    """
     model = load_model()
     le, mms, ss = load_preprocessors()
 
