@@ -14,7 +14,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 EXPOSE 5000
 
 # Define environment variable
-ENV NAME World
+ENV NAME=World
 
 # Replace the app.py with the correct file name
 CMD ["python", "main.py"]
