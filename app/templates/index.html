@@ -12,17 +12,46 @@
 		<style>
 			body {
 				font-size: 16px;
+				font-family: Arial, sans-serif;
 			}
-			.form-label,
-			.form-check-label {
-				font-weight: bold;
+			.nav-link {
+				color: #fff !important;
 			}
 		</style>
 	</head>
 	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Heart Disease Prediction</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNavAltMarkup"
+					aria-controls="navbarNavAltMarkup"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav">
+						<a
+							class="nav-link active"
+							aria-current="page"
+							href="/predict"
+							>Predict</a
+						>
+						<a class="nav-link" href="/">Home</a>
+						<a class="nav-link" href="/about">About Us</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+
 		<div class="container mt-5">
 			<h1 class="mb-3">Heart Disease Risk Prediction</h1>
-			<form action="/predict" method="post" class="row g-3">
+			<form action="/output" method="post" class="row g-3">
 				<div class="col-md-4">
 					<label for="age" class="form-label">Age:</label>
 					<input
@@ -48,33 +77,21 @@
 						name="ChestPainType"
 						required
 					>
-						<option value="ATA">ATA</option>
-						<option value="NAP">NAP</option>
+						<option value="TA">Typical Angina</option>
+						<option value="ATA">Atypical Angina</option>
+						<option value="NAP">Non-Anginal Pain</option>
 						<option value="ASY">Asymptomatic</option>
-						<option value="TA">TA</option>
 					</select>
 				</div>
 				<div class="col-md-4">
-					<label for="restingBP" class="form-label"
-						>Resting BP:</label
+					<label for="RestingBP" class="form-label"
+						>Resting Blood Pressure:</label
 					>
 					<input
 						type="number"
 						class="form-control"
 						id="RestingBP"
 						name="RestingBP"
-						required
-					/>
-				</div>
-				<div class="col-md-4">
-					<label for="MaxHR" class="form-label"
-						>Maximum Heart Rate :</label
-					>
-					<input
-						type="number"
-						class="form-control"
-						id="MaxHR"
-						name="MaxHR"
 						required
 					/>
 				</div>
@@ -104,7 +121,7 @@
 				</div>
 				<div class="col-md-4">
 					<label for="RestingECG" class="form-label"
-						>Resting Electrocardiographic Results:</label
+						>Resting ECG:</label
 					>
 					<select
 						class="form-control"
@@ -112,13 +129,29 @@
 						name="RestingECG"
 						required
 					>
-						<option value="0">Normal</option>
-						<option value="1">ST-T wave abnormality</option>
-						<option value="2">Left ventricular hypertrophy</option>
+						<option value="Normal">Normal</option>
+						<option value="ST">ST-T Wave Abnormality</option>
+						<option value="LVH">
+							Left Ventricular Hypertrophy
+						</option>
 					</select>
 				</div>
 				<div class="col-md-4">
-					<label class="form-label">Exercise Angina:</label>
+					<label for="MaxHR" class="form-label"
+						>Maximum Heart Rate:</label
+					>
+					<input
+						type="number"
+						class="form-control"
+						id="MaxHR"
+						name="MaxHR"
+						required
+					/>
+				</div>
+				<div class="col-md-4">
+					<label for="ExerciseAngina" class="form-label"
+						>Exercise Induced Angina:</label
+					>
 					<select
 						class="form-control"
 						id="ExerciseAngina"
@@ -130,10 +163,12 @@
 					</select>
 				</div>
 				<div class="col-md-4">
-					<label for="Oldpeak" class="form-label">Oldpeak:</label>
+					<label for="Oldpeak" class="form-label"
+						>ST Depression (Oldpeak):</label
+					>
 					<input
 						type="number"
-						step="0.000001"
+						step="0.1"
 						class="form-control"
 						id="Oldpeak"
 						name="Oldpeak"
@@ -141,40 +176,22 @@
 					/>
 				</div>
 				<div class="col-md-4">
-					<label class="form-label">ST Slope:</label>
+					<label for="ST_Slope" class="form-label">ST Slope:</label>
 					<select
 						class="form-control"
 						id="ST_Slope"
 						name="ST_Slope"
 						required
 					>
-						<option value="Up">Up</option>
+						<option value="Up">Upsloping</option>
 						<option value="Flat">Flat</option>
-						<option value="Down">Down</option>
-					</select>
-				</div>
-				<div class="col-md-4">
-					<label for="vesselsFluoro" class="form-label"
-						>Number of Major Vessels (0-3) colored by
-						Fluoroscopy:</label
-					>
-					<select
-						class="form-control"
-						id="vesselsFluoro"
-						name="vesselsFluoro"
-						required
-					>
-						<option value="0">0</option>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
+						<option value="Down">Downsloping</option>
 					</select>
 				</div>
 				<div class="col-12">
 					<button type="submit" class="btn btn-primary">
 						Predict
 					</button>
-				</div>
 			</form>
 		</div>
 		<!-- Bootstrap Bundle with Popper -->

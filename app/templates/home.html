@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Heart Disease Prediction</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+		<style>
+			body {
+				font-family: "Arial", sans-serif;
+			}
+			.nav-link {
+				color: #fff !important;
+			}
+		</style>
+	</head>
+	<body class="bg-light text-dark">
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">Heart Disease Prediction</a>
+				<button
+					class="navbar-toggler"
+					type="button"
+					data-bs-toggle="collapse"
+					data-bs-target="#navbarNavAltMarkup"
+					aria-controls="navbarNavAltMarkup"
+					aria-expanded="false"
+					aria-label="Toggle navigation"
+				>
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+					<div class="navbar-nav">
+						<a class="nav-link active" aria-current="page" href="#"
+							>Home</a
+						>
+						<a class="nav-link" href="/predict">Predict</a>
+						<a class="nav-link" href="/about">About Us</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<header class="text-center py-5 bg-secondary text-white">
+			<h2 class="display-4">Welcome to Heart Disease Prediction Tool</h2>
+			<p class="lead mt-3">
+				Explore our tool to predict your heart disease risk based on
+				health indicators.
+			</p>
+		</header>
+
+		<footer class="bg-dark text-white text-center p-3 mt-auto">
+			<p>
+				&copy; 2025 Heart Disease Prediction Tool. All rights reserved.
+			</p>
+		</footer>
+
+		<script>
+			gsap.from("h2", {
+				duration: 1,
+				y: -50,
+				opacity: 0,
+				ease: "bounce",
+			});
+		</script>
+	</body>
+</html>

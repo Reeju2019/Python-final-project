@@ -8,7 +8,18 @@ views = Blueprint("views", __name__)
 
 @views.route("/", methods=["GET"])
 def home() -> str:
-    """Render the homepage with the input form.
+    """Render the homepage.
+    Args:
+        None
+    Returns:
+        str: The rendered HTML content
+    """
+    return render_template("home.html")
+
+
+@views.route("/predict", methods=["GET"])
+def predict() -> str:
+    """Render input form.
     Args:
         None
     Returns:
@@ -17,8 +28,19 @@ def home() -> str:
     return render_template("index.html")
 
 
-@views.route("/predict", methods=["POST"])
-def predict() -> Union[str, tuple]:
+@views.route("/about", methods=["GET"])
+def about() -> str:
+    """Render the About Us page.
+    Args:
+        None
+    Returns:
+        str: The rendered HTML content
+    """
+    return render_template("about.html")
+
+
+@views.route("/output", methods=["POST"])
+def output() -> Union[str, tuple]:
     """Receive data from the form, use the model to make predictions, and show results.
     Args:
         None
