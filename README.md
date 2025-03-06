@@ -76,8 +76,3 @@ Contributions to the project are welcome! Please consider the following steps:
 ## License
 
 This project is licensed under the [MIT License](https://github.com/Reeju2019/Python-final-project/blob/master/LICENSE).
-
-```
-
-This README now includes a direct link to your GitHub repository and the `LICENSE` file, providing all necessary details for both users and potential contributors to understand and engage with your project effectively.
-```
