@@ -94,7 +94,7 @@ def preprocess_input_data(
     return np.array(input_data).reshape(1, -1)  # Reshape for model input
 
 
-def predict_risk(input_data: list) -> np.ndarray | str:
+def predict_risk(input_data: list) -> int:
     """
     Make a prediction using the pre-trained model and pre-processors.
     Args:
@@ -106,8 +106,6 @@ def predict_risk(input_data: list) -> np.ndarray | str:
     le, mms, ss = load_preprocessors()
 
     processed_input = preprocess_input_data(input_data, le, mms, ss)
-    if processed_input is None:
-        return "Prediction cannot be made due to input processing error."
 
     prediction = model.predict(processed_input)
     return prediction[0]
